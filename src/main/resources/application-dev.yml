@@ -1,5 +1,10 @@
 ---
 spring:
   profiles: dev
+  data:
+    mongodb:
+      host: localhost
+      port: 27017
+      database: reactivedb
 
 ## Include your configuration to Development Environment
