@@ -1,4 +1,4 @@
-package com.co.softworld;
+package com.co.softworld.reactive.mongodb;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
