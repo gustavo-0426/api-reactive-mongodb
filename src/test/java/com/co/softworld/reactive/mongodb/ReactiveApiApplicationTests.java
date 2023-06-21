@@ -1,4 +1,4 @@
-package com.co.softworld;
+package com.co.softworld.reactive.mongodb;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
