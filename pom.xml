@@ -8,9 +8,9 @@
 		<version>2.6.7</version>
 	</parent>
 	<groupId>com.co.softworld</groupId>
-	<artifactId>reactive-api-mongodb</artifactId>
+	<artifactId>api-reactive-mongodb</artifactId>
 	<version>1.0.0</version>
-	<name>reactive-api-mongodb</name>
+	<name>api-reactive-mongodb</name>
 	<description>reactive api with spring webflux and mongodb</description>
 
 	<properties>
