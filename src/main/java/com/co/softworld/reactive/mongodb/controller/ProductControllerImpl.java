@@ -34,8 +34,8 @@ public class ProductControllerImpl implements IProductController{
     }
 
     @Override
-    @DeleteMapping
-    public Mono<ResponseEntity<Void>> delete(Product product) {
-        return productService.delete(product);
+    @DeleteMapping("/{id}")
+    public Mono<ResponseEntity<Product>> delete(@PathVariable String id) {
+        return productService.delete(id);
     }
 }

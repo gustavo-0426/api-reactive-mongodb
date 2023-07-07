@@ -9,5 +9,5 @@ public interface IProductController {
     Mono<ResponseEntity<Flux<Product>>> findAll();
     Mono<ResponseEntity<Product>> findById(String id);
     Mono<ResponseEntity<Product>> save(Product product);
-    Mono<ResponseEntity<Void>> delete(Product product);
+    Mono<ResponseEntity<Product>> delete(String id);
 }

@@ -33,8 +33,12 @@ public class ProductServiceImpl implements IProductService {
     }
 
     @Override
-    public Mono<ResponseEntity<Void>> delete(Product product) {
-        return productRepo.delete(product).map(ResponseEntity::ok);
+    public Mono<ResponseEntity<Product>> delete(String id) {
+        Product product = productRepo.findById(id).block();
+        if (product == null)
+            return just(notFound().build());
+        productRepo.delete(product);
+        return just(ok(product));
     }
 
 }
