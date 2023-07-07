@@ -86,7 +86,7 @@ class ProductControllerImplTest {
     }
 
     @Test
-    void tesDelete() {
+    void testDelete() {
         when(productService.delete("3")).thenReturn(just(ok(product)));
         productController.delete()
                 .uri("/product/3")

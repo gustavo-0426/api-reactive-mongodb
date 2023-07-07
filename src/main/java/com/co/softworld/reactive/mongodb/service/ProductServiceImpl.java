@@ -29,16 +29,15 @@ public class ProductServiceImpl implements IProductService {
 
     @Override
     public Mono<ResponseEntity<Product>> save(Product product) {
-        return productRepo.save(product).map(ResponseEntity::ok);
+        return productRepo.save(product).map(ResponseEntity::ok).defaultIfEmpty(badRequest().build());
     }
 
     @Override
     public Mono<ResponseEntity<Product>> delete(String id) {
-        Product product = productRepo.findById(id).block();
-        if (product == null)
-            return just(notFound().build());
-        productRepo.delete(product);
-        return just(ok(product));
+        return productRepo.findById(id)
+                .flatMap(product -> productRepo.delete(product)
+                        .then(just(ok(product)))
+                ).defaultIfEmpty(notFound().build());
     }
 
 }
